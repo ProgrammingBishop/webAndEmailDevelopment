@@ -1,0 +1,89 @@
+/*
+==================
+Testimonial Styles
+==================
+*/
+
+
+#testimonial {
+    padding:    5rem 0;
+    background: #3289cc;
+}
+
+.testimonial-out {
+    opacity:    0;
+    transition: .3s;
+}
+    
+.testimonial-in { 
+    opacity: 1; 
+}
+
+.testimonial-header {
+    height:                5rem;
+    -webkit-border-radius: 2rem 2rem 0 0;
+       -moz-border-radius: 2rem 2rem 0 0;
+            border-radius: 2rem 2rem 0 0;
+    background:            #ffffff;
+}
+
+.icon-offset {
+    margin: -2.75rem 0 0 0;
+}
+
+.testimonial-image {
+    background-color:      #3289cc;
+    width:                 120px;
+    text-align:            center;
+    padding-top:           1rem;
+    margin:                0 auto;
+    -webkit-border-radius: 5rem;
+       -moz-border-radius: 5rem;
+            border-radius: 5rem;
+}
+
+.testimonial-image img {
+    width:  80px;
+    margin: 0 0 1rem 0; 
+}
+
+#testimonial h2 {
+    text-align: center;
+    margin:     0 0 2.5rem 0;
+    color:      #ffffff;
+}
+
+#testimonial p {
+    margin: 0 0 2rem 0;
+    color:  #ffffff;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+    
+    #testimonial {
+        padding: 4rem 0;
+    }
+    
+    .testimonial-header {
+        display: none;
+    }
+    
+    .icon-offset {
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    
+    .testimonial {
+        margin: 1rem 0;
+    }
+      
+}
