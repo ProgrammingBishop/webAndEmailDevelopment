@@ -33,13 +33,7 @@ p.submit {
 }
 
 p.errors {
-    background-color: #ffffff;
-    color:            darkred;
-    font-size:        1rem;
-    margin:           -1.15rem 0 1rem 0;
-    padding:          .25rem;
-    text-align:       center;
-    border-radius:    .25rem;
+    display: none !important;
 }
 
 p.error label {
