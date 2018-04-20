@@ -7,12 +7,11 @@ Every month the marketing department mails to a list of approximately 30,000 rec
 All versions of a month's direct mail will have a URL with a specific subdomain that pertains to a recipient for a given association and area of practice. This is not only track leads for that specific version of the direct mail piece, but to also ensure that the landing page the recipient visits displays the appropriate content. It is not optimal to have approximately 40 versions of a landing page with small differences, so jQuery and JavScript is used to achieve the following:  
 
 
-Markup :
-    1. Display the proper logo  
-    2. Tailor the copy for an association and area or practice  
-    3. Alter the form success location to a campaign set up in Pardot and mapped to Salesforce for each specific direct mail version for that month   
-    4. Display the approrptiate imagery  
-    5. Display the appropriate downloadable content based on products available to specific areas of practice  
+1. Display the proper logo  
+2. Tailor the copy for an association and area or practice  
+3. Alter the form success location to a campaign set up in Pardot and mapped to Salesforce for each specific direct mail version for that month   
+4. Display the approrptiate imagery  
+5. Display the appropriate downloadable content based on products available to specific areas of practice  
 
 
 The URL example at the top is to view the generic page that can cover all healthcare practices.  
