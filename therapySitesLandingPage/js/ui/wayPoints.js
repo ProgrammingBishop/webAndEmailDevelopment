@@ -1,7 +1,6 @@
 (function($, window, document) {
     $(document).ready(function() {
        
-        var $form        = $('.form-out');
         var $services    = $('.services-out');
         var $features    = $('.features-out');
         var $newsletter  = $('.newsletter-out');
@@ -10,7 +9,6 @@
         var $designs     = $('.designs-out');
         
         // Fade in Page Elements on Scroll
-        $form.waypoint       ( function() { $form.addClass       ('form-in');        }, { offset: '75%' });
         $services.waypoint   ( function() { $services.addClass   ('services-in');    }, { offset: '75%' });
         $features.waypoint   ( function() { $features.addClass   ('features-in');    }, { offset: '75%' });
         $newsletter.waypoint ( function() { $newsletter.addClass ('newsletter-in');  }, { offset: '75%' });
