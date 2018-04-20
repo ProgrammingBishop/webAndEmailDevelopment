@@ -27,3 +27,5 @@ Below is a table of URL examples that will display the dynamic content based on 
 |ACFAS        |Podiatry           |http://info.officite.com/summer60/DM?src=ACFAS  |ACFAS.Summer60.com     |
 |ASGE         |Gastro             |http://info.officite.com/summer60/DM?src=ASGE   |ASGE.Summer60.com      |
 |AOA          |Osteopathic        |http://info.officite.com/summer60/DM?src=AOA    |AOA.Summer60.com       |
+
+The tyc.js in the js folder houses a switch statement that fires when a form is submitted through Pardot (whcih houses every landing page). Each case uses the same query "src" value that the gallery.js does for the the dynamic content. Each case embeds a tracking pixel after form submission, and this tracking pixel executes a form handler that essentially maps the Pardot CRM to Salesforce.com so the inside sales team at Officite can followup with the lead. After the pixel has been embedded, the page is redirected to the appropriate design gallery based on the new lead's area of practice (dictated by the subdomain in the URL found within the direct mail piece they had received).
