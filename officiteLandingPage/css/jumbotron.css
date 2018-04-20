@@ -1,0 +1,81 @@
+/*
+================
+Jumbotron Styles
+================
+*/
+
+
+#jumbotron {
+    background: 
+        linear-gradient(
+            240deg,
+            rgba(81, 178, 237, 1) 10%,
+            rgba(21,  71,  96, 1)
+        );
+}
+
+#jumbotron-content {
+    height:     88vh !important;
+    max-height: 100% !important;
+}
+
+#jumbotron-h1,
+#jumbotron-p {
+    color: #ffffff;
+}
+
+#jumbotron-arrow-text {
+    font-weight: 900;
+    color:       #ffffff;
+    text-align:  center;
+    margin:      2rem 0 0 0;
+}
+
+#arrow {
+    border:            solid #ffffff;
+    border-width:      0 .75rem .75rem 0;
+    display:           inline-block;
+    padding:           .75rem;
+    margin:            0 0 0 50%;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg); 
+            transform: rotate(45deg);
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+    
+    #jumbotron-content {
+        height:     80vh !important;
+        max-height: 100% !important;
+    }
+    
+    #arrow,
+    #jumbotron-arrow-text {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    
+    #jumbotron,
+    #jumbotron-content {
+        height: auto !important;
+    }
+    
+    #jumbotron-content {
+        padding: 3rem 0;
+    }
+    
+    #jumbotron-right {
+        display: block;
+        margin:  2rem auto;
+    }
+    
+}

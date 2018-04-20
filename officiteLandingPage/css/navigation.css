@@ -1,0 +1,103 @@
+/*
+=================
+Navigation Styles
+=================
+*/
+
+
+#navigation {
+    background-color: #ffffff;
+    padding:          1rem 0;
+    width:            100%;
+}
+
+#sticky-navigation {
+    background-color:   #ffffff;
+    padding:            1rem 0;
+    width:              100%;
+    z-index:            99999;   
+    position:           fixed;
+    top:                0;
+    -webkit-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    display: none;
+}
+
+@keyframes add-navigation {
+    from { opacity: 0 }
+    to   { opacity: 1 }
+}
+
+@keyframes remove-navigation {
+    from { opacity: 1 }
+    to   { opacity: 0 }
+}
+
+#header-left   a,
+#header-mobile a,
+#header-right  a {
+    color:           #0066b3;
+    text-decoration: none;
+    transition:      .3s;
+}
+
+#header-left   a:hover,
+#header-mobile a:hover,
+#header-right  a:hover {
+    color:      #fcb32b;
+    transition: .3s;
+}
+
+#sticky-header-left   a,
+#sticky-header-mobile a,
+#sticky-header-right  a {
+    color:           #3289cc;
+    text-decoration: none;
+    transition:      .3s;
+}
+
+#sticky-header-left   a:hover,
+#sticky-header-mobile a:hover,
+#sticky-header-right  a:hover {
+    color:      #eb8640;
+    transition: .3s;
+}
+
+.brand {
+    max-width: 100%;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+    
+    .brand {
+        display: block;
+        margin:  0 auto 0 auto;
+    }
+    
+    #sticky-header-mobile,
+    #header-mobile {
+        padding-right: 0 !important;
+    }
+    
+    #sticky-header-right,
+    #header-right {
+        padding-left: 0 !important;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    
+    #navigation {
+        padding: 0;
+    }
+    
+}

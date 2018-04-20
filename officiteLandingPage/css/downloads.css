@@ -1,0 +1,141 @@
+/*
+===========
+Form Styles
+===========
+*/
+
+#downloads img {
+    max-width:  100%;
+    width:      100%;
+    transition: .3s;
+    opacity:    .2;
+    cursor:     pointer;
+}
+
+.downloadable {
+    padding: 0 !important;
+}
+
+.downloads-out {
+    opacity:    0;
+    transition: .3s;
+}
+    
+.downloads-in { 
+    opacity: 1; 
+}
+
+#downloads .download-h4 {
+    font-size:   2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align:  left;
+    color:       #0066b3;
+}
+
+#downloads .download-p {
+    font-size:   1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    text-align:  left;
+    color:       #2d2d2d;
+}
+
+#downloads img:hover {
+    opacity:    1;
+    transition: .3s;
+}
+
+#downloadable-container {
+    position:   relative;
+    text-align: center;
+    color:      #ffffff;
+}
+
+#downloads .centered {
+    position:          absolute;
+    top:               50%;
+    left:              50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color:             #00aad8;
+    text-decoration:   none;
+    width:             80%;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 1200px) {
+    
+    #downloads .download-h4 {
+        font-size:   1.5rem;
+        line-height: 2rem;
+    }
+
+    #downloads .download-p {
+        font-size:   1rem;
+        line-height: 1.5rem;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    
+    #downloads .download-h4 {
+        font-size:   2rem;
+        line-height: 2.5rem;
+    }
+
+    #downloads .download-p {
+        font-size:   1.5rem;
+        line-height: 2rem;
+    }
+    
+}
+
+@media (max-width: 780px) {
+    
+    #downloads .download-h4 {
+        font-size:   1.5rem;
+        line-height: 2rem;
+    }
+
+    #downloads .download-p {
+        font-size:   1rem;
+        line-height: 1.5rem;
+    }
+    
+}
+
+@media (max-width: 575px) {
+    
+    #downloads .download-h4 {
+        font-size:   2rem;
+        line-height: 2.5rem;
+    }
+
+    #downloads .download-p {
+        font-size:   1.5rem;
+        line-height: 2rem;
+    }
+    
+}
+
+@media (max-width: 450px) {
+    
+    #downloads .download-h4 {
+        font-size:   1.5rem;
+        line-height: 2rem;
+    }
+
+    #downloads .download-p {
+        font-size:   1rem;
+        line-height: 1.5rem;
+    }
+    
+}
