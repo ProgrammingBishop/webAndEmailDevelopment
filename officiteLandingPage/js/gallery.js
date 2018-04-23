@@ -10,44 +10,44 @@
         function getImagery(aop) {
             var $screenshot = $('.screenshot');
             var $preview    = $('.preview');
+            var $phone      = $('#feature-phone');
             
             for (var index = 0; index < $screenshot.length; index++) {
-                $screenshot[index].src = "../img/screenshots/" + aop + "/0" + [index + 1] + ".png";
-                $preview   [index].src = "../img/screenshots/" + aop + "/0" + [index + 1] + ".png";
+                $screenshot[index].src = "https://s3.amazonaws.com/officite-eblast/2018-global/landingPage/screenshots/" + aop + "/0" + [index + 1] + ".png";
+                $preview   [index].src = "https://s3.amazonaws.com/officite-eblast/2018-global/landingPage/screenshots/" + aop + "/0" + [index + 1] + ".png";
             }
+            
+            $phone.attr('src', 'https://s3.amazonaws.com/officite-eblast/2018-global/landingPage/screenshots/' + aop + '/' + aop + 'Phone.png')
         }
         
         // Dermatology Downloads
         function getDermDocs() {
-            var $patientPDF   = $('#patient__pdf');
+            var $patientPDF   = $('.patient__pdf');
             var $patientTitle = $('#patient__ed__title');
             var $patientDesc  = $('#patient__ed__description');
             
-            $patientPDF.attr  ({'href'     : 'http://go.officite.com/officite2018/06-june/summer60/pdf/DermPatientEducation.pdf',
-                                'download' : ''});
+            $patientPDF.attr  ('href', 'https://s3.amazonaws.com/officite-eblast/2018-global/landingPage/pdf/DermPatientEducation.pdf');
             $patientTitle.html('Derm Patient Education');
-            $patientDesc.html ('Provide the best care with online patient education materials designed to improve clinical outcomes and reduce complications.<br /><br /><b>&#62;&#62;Download More Info Here</b>');
+            $patientDesc.html ('Provide the best care with online patient education materials designed to improve clinical outcomes and reduce complications.');
         }
         
         // Dental Downloads
         function getDentalDocs() {
-            var $patientPDF   = $('#patient__pdf');
+            var $patientPDF   = $('.patient__pdf');
             var $patientTitle = $('#patient__ed__title');
             var $patientDesc  = $('#patient__ed__description');
             
-            $patientPDF.attr  ({'href'     : 'http://go.officite.com/officite2018/03-march/officiteScore/pdf/DentalPatientEducation.pdf',
-                                'download' : ''});
+            $patientPDF.attr  ('href', 'http://go.officite.com/officite2018/06-june/summer60/pdf/DentalPatientEducation.pdf');
             $patientTitle.html('Dental Patient Education');
-            $patientDesc.html ('Boost treatment acceptance and prevent complications with an online library of HD videos &amp; learning tools.</span><br /><br /><b>&#62;&#62;Download More Info Here</b>');
+            $patientDesc.html ('Boost treatment acceptance and prevent complications with an online library of HD videos &amp; learning tools.');
             
-            var $socialPDF   = $('#social__pdf');
+            var $socialPDF   = $('.social__pdf');
             var $socialTitle = $('#social__title');
             var $socialDesc  = $('#social__description');
             
-            $socialPDF.attr  ({'href'     : 'http://go.officite.com/officite2018/03-march/officiteScore/pdf/socialMedia.pdf',
-                               'download' : ''});
+            $socialPDF.attr  ('href', 'https://s3.amazonaws.com/officite-eblast/2018-global/landingPage/pdf/socialMedia.pdf');
             $socialTitle.html('Social Media');
-            $socialDesc.html ('41% of people surveyed said social media would affect their choice of a healthcare provider. Reach them with Facebook, Twitter and optional blogging packages.<br /><br /><b>&#62;&#62;Download More Info Here</b>');
+            $socialDesc.html ('41% of people surveyed said social media would affect their choice of a healthcare provider. Reach them with Facebook, Twitter and optional blogging packages.');
         }
         
         // Dynamic Content

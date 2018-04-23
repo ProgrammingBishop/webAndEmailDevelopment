@@ -2,16 +2,17 @@
     $(document).ready(function() {
     
         var $services    = $('.services-out');
-        var $downloads   = $('.downloads-out');
         var $newsletter  = $('.newsletter-out');
-        var $navigation  = $('#sticky-navigation');
         var $designs     = $('.designs-out');
+        var $features    = $('.features-out');
+        
+        var $navigation  = $('#sticky-navigation');
         
         // Fade in Page Elements on Scroll
         $services.waypoint   ( function() { $services.addClass   ('services-in');    }, { offset: '75%' });
-        $downloads.waypoint  ( function() { $downloads.addClass  ('downloads-in');   }, { offset: '75%' });
         $newsletter.waypoint ( function() { $newsletter.addClass ('newsletter-in');  }, { offset: '75%' });
         $designs.waypoint    ( function() { $designs.addClass    ('designs-in');     }, { offset: '75%' });
+        $features.waypoint   ( function() { $features.addClass   ('features-in');     }, { offset: '75%' });
         
         // Fade in Navigation after Jumbotron
         $services.waypoint (function(direction) { 

@@ -1,0 +1,110 @@
+/*
+===============
+Features Styles
+===============
+*/
+
+
+#features {
+    background: 
+        linear-gradient(
+            240deg,
+            rgba(81, 178, 237, 1) 10%,
+            rgba(21,  71,  96, 1)
+        );
+    padding: 5rem 0;
+}
+
+.features-out {
+    opacity:    0;
+    transition: .3s;
+}
+    
+.features-in { 
+    opacity: 1; 
+}
+
+.mobile-download {
+    display: none;
+}
+
+#features h2 {
+    text-align:  center;
+    margin:      0 0 2rem 0;
+    color:      #ffffff;
+}
+
+#features h4 {
+    text-align: center;
+    color:      #ffffff;
+}
+
+#features p {
+    color: #ffffff;
+}
+
+#features .feature-icon {
+    max-width:  30%;
+    margin:     1rem auto 2rem auto;
+    display:    block;
+    transition: .3s
+}
+
+#features .feature-icon:hover {
+    opacity:    .5;
+    transition: .3s;
+    cursor:     pointer;
+}
+
+#features #feature-phone {
+    max-width: 100%;
+    margin:    4rem 0 -10rem 0;
+}
+
+#features a {
+    text-decoration: none;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+    
+    #features {
+        padding: 4rem 0;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    
+    .feature {
+        margin: 1rem 0;
+    }
+    
+    #features .feature-icon {
+        max-width: 90%;
+    }
+    
+    #features h4 {
+        text-align: left;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    
+    .mobile-download {
+        display:    block;
+        transition: .3s;
+    }
+    
+    .mobile-download p {
+        font-size:   1.25rem;
+        font-weight: 700;
+    }
+    
+}
