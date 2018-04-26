@@ -3,7 +3,7 @@
 
         // Get src value from URL
         var $url = $(location).attr('href');
-        var path = $url.split(/\?src=|\&/);
+        var path = $url.split(/\?src=|\&\#/);
         var src  = path[1];
         
         // Swap Screenshots and Preview
