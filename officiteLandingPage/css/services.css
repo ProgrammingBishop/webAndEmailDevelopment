@@ -13,6 +13,13 @@ Services Styles
     margin:     0 auto 2.5rem auto;
     display:    block;
     width:      40%;
+    cursor:     pointer;
+    transition: .3s;
+}
+
+#services img:hover {
+    opacity: .3;
+    transition: .3s;
 }
 
 .services-out {

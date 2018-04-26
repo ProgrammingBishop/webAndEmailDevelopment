@@ -7,6 +7,8 @@
         var $features    = $('.features-out');
         
         var $navigation  = $('#sticky-navigation');
+        var $henrySchein = $('#henry-footer');
+        var $jumbotron   = $('#jumbotron');
         
         // Fade in Page Elements on Scroll
         $services.waypoint   ( function() { $services.addClass   ('services-in');    }, { offset: '75%' });
@@ -29,6 +31,25 @@
                 }, 500);
             }
         }, { offset: '40%' });
+        
+        // Fade in Henry Footer after Jumbotron
+        $jumbotron.waypoint (function(direction) { 
+            if (direction == 'down') {
+                $henrySchein.css({'animation' : 'add-schein .5s',
+                                  'opacity'   : '1',
+                                  'display'   : 'block'});
+            } else {
+                $henrySchein.css({'animation' : 'remove-schein .5s',
+                                  'opacity'   : '0'});
+                
+                window.setTimeout(function() {
+                    $henrySchein.css('display', 'none');
+                }, 250);
+            }
+        }, { offset: '5%' });
+        
+        // Pad the Footer for Henry Schein
+        $('#footer').css('padding-bottom', $henrySchein.height() + 20);
             
     });
 }(window.jQuery, window, document));
