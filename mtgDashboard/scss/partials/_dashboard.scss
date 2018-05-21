@@ -1,0 +1,22 @@
+/* 
+==============
+Dashboard SCSS
+==============
+*/
+
+
+#dashboard {
+	background-color: $PARCHMENT;
+
+    #dashboard__content {
+    	height:     70vh !important;
+    	max-height: 70%  !important;
+    }
+}
+
+
+/*
+=======================
+Dashboard Media Queries
+=======================
+*/

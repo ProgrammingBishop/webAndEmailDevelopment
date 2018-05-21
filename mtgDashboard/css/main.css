@@ -1,2 +1,176 @@
+/* 
+===========
+Mixins SCSS
+===========
+*/
+/*
+====================
+Mixins Media Queries
+====================
+*/
+/* 
+============
+Globals SCSS
+============
+*/
+/*  Media Query Breakpoints
+    Extra Small:  400px
+    Small:        576px
+    Medium:       768px
+    Large:        992px
+    Extra Large: 1200px
+*/
+html {
+  overflow-x: hidden; }
+
+h1,
+h2,
+h3,
 p {
-  font-color: #343434; }
+  font-family: "Cormorant", serif;
+  color: #2d2d2d; }
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 700; }
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700; }
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500; }
+
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 300; }
+
+/* 
+=====================
+Globals Media Queries
+=====================
+*/
+/* 
+==============
+Jumbotron SCSS
+==============
+*/
+#jumbotron {
+  background: linear-gradient(240deg, #51b2ed 10%, #154760);
+  height: 30vh !important;
+  max-height: 30%  !important; }
+
+/* 
+=======================
+Jumbotron Media Queries
+=======================
+*/
+/* 
+==============
+Dashboard SCSS
+==============
+*/
+#dashboard {
+  background-color: #F1F1D4; }
+  #dashboard #dashboard__content {
+    height: 70vh !important;
+    max-height: 70%  !important; }
+
+/*
+=======================
+Dashboard Media Queries
+=======================
+*/
+/* 
+===========
+Player SCSS
+===========
+*/
+#player__1__name,
+#player__2__name {
+  text-align: center; }
+
+.counter {
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: .25rem 1rem;
+  cursor: pointer; }
+
+.plus_counter {
+  background-color: #549930;
+  transition: .3s;
+  border: none;
+  text-align: center;
+  display: block;
+  margin: 0 auto; }
+  .plus_counter:hover {
+    background-color: #67ce38;
+    transition: .3s; }
+
+.minus_counter {
+  background-color: #a81a1a;
+  transition: .3s;
+  border: none;
+  text-align: center;
+  display: block;
+  margin: 0 auto; }
+  .minus_counter:hover {
+    background-color: #e02727;
+    transition: .3s; }
+
+.counter_label {
+  text-align: left; }
+
+.counter_count {
+  text-align: right; }
+
+/*
+====================
+Player Media Queries
+====================
+*/
+/* 
+============
+Control SCSS
+============
+*/
+#dice {
+  max-width: 100%; }
+
+#roll__dice,
+#modern,
+#commander {
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #eb8640;
+  transition: .3s;
+  border: none;
+  text-align: center;
+  display: block;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: .25rem 1rem;
+  cursor: pointer;
+  margin: 1rem auto; }
+  #roll__dice:hover,
+  #modern:hover,
+  #commander:hover {
+    background-color: #fcb32b;
+    transition: .3s; }
+
+/* 
+=====================
+Control Media Queries
+=====================
+*/

@@ -1,0 +1,44 @@
+/* 
+===========
+Player SCSS
+===========
+*/
+
+
+#player__1__name,
+#player__2__name {
+	text-align: center;
+}
+
+.counter {
+	@include   border-radius(.5rem); 
+	color:     $WHITE;
+	font-size: 1.5rem;
+	padding:   .25rem 1rem;
+	cursor:    pointer;
+}
+
+.plus_counter {
+	@include base-button($GREEN, $LGREEN);
+	margin:  0 auto;
+}
+
+.minus_counter {
+	@include base-button($RED, $LRED);
+	margin:  0 auto;
+}
+
+.counter_label {
+	text-align: left;
+}
+
+.counter_count {
+	text-align: right;
+}
+
+
+/*
+====================
+Player Media Queries
+====================
+*/

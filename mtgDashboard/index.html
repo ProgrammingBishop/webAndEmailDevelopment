@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+    <head>
+    
+    <!-- Title Tab -->
+        <link rel="icon" type="image/x-icon" href="./img/favicon/mtg.png">
+        <title>MTG Dashboard</title>
+    <!-- End Title Tab -->
+
+    <!-- Meta Tags -->
+        <meta name="author"                content="Scott Bishop">
+        <meta name="MTG Dashboard"         content="">
+        <meta name="viewport"              content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="robots"                content="noindex, nofollow">
+        <meta charset="UTF-8">
+    <!-- End Meta Tags -->
+    
+    <!-- Facebook Open Graph -->
+        <meta property="og:url"         content="" />
+        <meta property="og:title"       content="MTG Dashboard" />
+        <meta property="og:description" content="" />
+        <meta property="og:image"       content="" />
+    <!-- End Facebook Open Graph -->
+
+    <!-- Stylesheets -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./css/main.css" rel="stylesheet" />
+    <!-- End Stylesheets -->
+    
+    <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Cormorant:300,500,700" rel="stylesheet">
+    <!-- End Fonts -->
+
+    </head>
+
+
+    <body>
+    	<!-- Jumbotron -->
+    	<section id='jumbotron'>
+    		<div class='container'>
+    			<div class='row align-items-center'>
+    				<div class='col-12'>
+
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<!-- End Jumbotron -->
+
+    	<!-- Dashboard -->
+    	<section id='dashboard'>
+    		<div class='container'>
+    			<div class='row' id='dashboard__content'>
+    				<div class='col-12 align-self-center'>
+    					
+				    	<!-- Player 1 -->
+				    	<div class='row align-items-center'>
+	    					<div class='col-4'>
+
+					    		<!-- Player 1 Name -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+		    							<h2 id="player__1__name">Player 1</h2>
+		    						</div>
+		    					</div>
+					    		<!-- End Player 1 Name -->
+
+
+					    		<!-- Player 1 Life -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+
+		    							<!-- Player 1 Life Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__1__life__label">Life</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__1__life__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 1 Life Total -->
+
+
+						    			<!-- Control Life Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__1__add__life" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__1__subtract__life" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Life Totals -->
+
+						    		</div>
+						    	</div>
+					    		<!-- End Player 1 Life -->
+
+
+					    		<!-- Player 1 Poison -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+
+						    			<!-- Player 1 Poison Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__1__poison__label">Poison</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__1__poison__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 1 Poison Total -->
+
+
+						    			<!-- Control Poison Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__1__add__poison" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__1__subtract__poison" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Poison Totals -->
+
+					    			</div>
+					    		</div>
+					    		<!-- End Player 1 Poison -->
+
+
+					    		<!-- Player 1 Commander -->
+					    		<div class='row align-items-center commander'>
+		    						<div class='col-12'>
+
+						    			<!-- Player 1 Commander Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__1__commander__label">Commander</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__1__commander__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 1 Commander Total -->
+
+
+						    			<!-- Control Commander Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__1__add__commander" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__1__subtract__commander" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Commander Totals -->
+
+						    		</div>
+					    		</div>
+					    		<!-- End Player 1 Commander -->
+
+				    		</div>
+				    	<!-- End Player 1 -->
+
+
+				    	<!-- Game Control -->
+	    					<div class='col-4'>
+
+					    		<!-- Dice -->
+					    		<div class='row align-items-center'>
+			    					<div class='col-8 offset-2'>
+			    						<button id="roll__dice">Roll Dice</button>
+						    			<img src='./img/dice/1.png' alt='dice' id='dice' />
+						    		</div>
+						    	</div>
+					    		<!-- End Dice -->
+
+
+					    		<!-- Game Mode -->
+					    		<div class='row align-items-center'>
+					    			<div class='col-12'>
+						    			<button id="modern">Modern</button>
+						    		</div>
+
+						    		<div class='col-12'>
+						    			<button id="commander">Commander</button>
+						    		</div>
+					    		</div>
+					    		<!-- End Game Mode -->
+
+							</div>
+				    	<!-- End Game Control -->
+
+
+				    	<!-- Player 2 -->
+	    					<div class='col-4'>
+
+					    		<!-- Player 2 Name -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+		    							<h2 id="player__2__name">Player 2</h2>
+		    						</div>
+		    					</div>
+					    		<!-- End Player 2 Name -->
+
+
+					    		<!-- Player 2 Life -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+
+		    							<!-- Player 2 Life Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__2__life__label">Life</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__2__life__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 2 Life Total -->
+
+
+						    			<!-- Control Player 2 Life Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__2__add__life" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__2__subtract__life" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Player 2 Life Totals -->
+
+						    		</div>
+						    	</div>
+					    		<!-- End Player 2 Life -->
+
+
+					    		<!-- Player 2 Poison -->
+					    		<div class='row align-items-center'>
+		    						<div class='col-12'>
+
+						    			<!-- Player 2 Poison Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__2__poison__label">Poison</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__2__poison__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 2 Poison Total -->
+
+
+						    			<!-- Control Player 2 Poison Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__2__add__poison" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__2__subtract__poison" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Player 2 Poison Totals -->
+
+					    			</div>
+					    		</div>
+					    		<!-- End Player 1 Poison -->
+
+
+					    		<!-- Player 2 Commander -->
+					    		<div class='row align-items-center commander'>
+		    						<div class='col-12'>
+
+						    			<!-- Player 2 Commander Total -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6 counter_label'>
+				    							<h3 id="player__2__commander__label">Commander</h3>
+				    						</div>
+
+				    						<div class='col-6 counter_count'>
+				    							<h1 id="player__2__commander__total">0</h1>
+				    						</div>
+				    					</div>
+						    			<!-- End Player 2 Commander Total -->
+
+
+						    			<!-- Control Player 2 Commander Totals -->
+						    			<div class='row align-items-center'>
+				    						<div class='col-6'>
+				    							<button id="player__2__add__commander" class='plus_counter counter'>&#43;</button>
+				    						</div>
+
+				    						<div class='col-6'>
+				    							<button id="player__2__subtract__commander" class='minus_counter counter'>&#45;</button>
+				    						</div>
+						    			</div>
+						    			<!-- End Control Player 2 Commander Totals -->
+
+						    		</div>
+					    		</div>
+					    		<!-- End Player 2 Commander -->
+
+				    		</div>
+				    	<!-- End Player 2 -->
+
+	    			</div>
+    			</div>
+    		</div>
+    	</section>
+	    <!-- End Dashboard -->
+
+	    <!-- Scripts -->
+	        <!-- Third Party Libraries -->
+	            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	        <!-- End Third Party Libraries -->
+
+	        <!-- Local JS Files / Dynamic Content and UI -->
+	            <script src="./js/main.js"></script>
+	        <!-- End Local JS Files -->
+    <!-- End Scripts -->
+
+    </body>
+</html>

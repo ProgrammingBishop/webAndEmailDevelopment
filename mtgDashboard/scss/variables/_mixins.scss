@@ -1,0 +1,33 @@
+/* 
+===========
+Mixins SCSS
+===========
+*/
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin base-button($base, $highlight) {
+	background-color: $base;
+	transition:       .3s;
+	border:           none;
+	text-align:       center;
+	display:          block;
+
+	&:hover {
+		background-color: $highlight;
+		transition:       .3s;
+	}
+}
+
+
+/*
+====================
+Mixins Media Queries
+====================
+*/

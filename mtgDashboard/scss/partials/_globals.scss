@@ -1,0 +1,58 @@
+/* 
+============
+Globals SCSS
+============
+*/
+
+
+/*  Media Query Breakpoints
+    Extra Small:  400px
+    Small:        576px
+    Medium:       768px
+    Large:        992px
+    Extra Large: 1200px
+*/
+
+
+html {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+	font-family: $FONT;
+	color:       $BLACK;
+}
+
+h1 {
+	font-size:   3rem;
+	line-height: 3.5rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size:   2.5rem;
+	line-height: 3rem;
+	font-weight: 700;
+}
+
+h3 {
+	font-size:   2rem;
+	line-height: 2.5rem;
+	font-weight: 500;
+}
+
+p {
+	font-size:   1.5rem;
+	line-height: 2rem;
+	font-weight: 300;
+} 
+
+
+/* 
+=====================
+Globals Media Queries
+=====================
+*/
