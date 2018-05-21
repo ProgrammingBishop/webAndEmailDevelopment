@@ -1,60 +1,45 @@
 var domController = (function ($) {
 
     var domElements = {
-        // Player 1 DOM Elements
+        // Player DOM Elements
         // --------------------------------------------------
-        player__1__name : $('#player__1__name'),
+        player_name        : $('.player_name'),
+        change_player_name : $('.change_player_name'),
+        plus_counter       : $('.plus_counter'),
+        minus_counter      : $('.minus_counter'),
 
         // Life
-        player__1__life__total    : $('#player__1__life__total'),
-        player__1__add__life      : $('#player__1__add__life'),
-        player__1__subtract__life : $('#player__1__subtract__life'),
+        player_life_total    : $('.player_life_total'),
+        player_add_life      : $('.player_add_life'),
+        player_subtract_life : $('.player_subtract_life'),
 
         // poison
-        player__1__poison__total    : $('#player__1__poison__total'),
-        player__1__add__poison      : $('#player__1__add__poison'),
-        player__1__subtract__poison : $('#player__1__subtract__poison'),
+        player_poison_total    : $('.player_poison_total'),
+        player_add_poison      : $('.player_add_poison'),
+        player_subtract_poison : $('.player_subtract_poison'),
 
         // Commander
-        player__1__commander__total    : $('#player__1__commander__total'),
-        player__1__add__commander      : $('#player__1__add__commander'),
-        player__1__subtract__commander : $('#player__1__subtract__commander'),
+        player_commander_total    : $('.player_commander_total'),
+        player_add_commander      : $('.player_add_commander'),
+        player_subtract_commander : $('.player_subtract_commander'),
+
+        // Player 1
+        player__1__life      : $('#player__1__life'),
+        player__1__poison    : $('#player__1__poison'),
+        player__1__commander : $('#player__1__commander'),
+
+        // Player 2
+        player__2__life      : $('#player__2__life'),
+        player__2__poison    : $('#player__2__poison'),
+        player__2__commander : $('#player__2__commander'),
         // --------------------------------------------------
-
-
-        // Player 2 DOM Elements
-        // --------------------------------------------------
-        player__2__name : $('#player__2__name'),
-
-        // Life
-        player__2__life__total    : $('#player__2__life__total'),
-        player__2__add__life      : $('#player__2__add__life'),
-        player__2__subtract__life : $('#player__2__subtract__life'),
-
-        // poison
-        player__2__poison__total    : $('#player__2__poison__total'),
-        player__2__add__poison      : $('#player__2__add__poison'),
-        player__2__subtract__poison : $('#player__2__subtract__poison'),
-
-        // Commander
-        player__2__commander__total    : $('#player__2__commander__total'),
-        player__2__add__commander      : $('#player__2__add__commander'),
-        player__2__subtract__commander : $('#player__2__subtract__commander'),
-        // --------------------------------------------------
-
 
         // Control DOM Elements
         // --------------------------------------------------
-        roll__dice : $('#roll__dice'),
-        modern     : $('#modern'),
-        commander  : $('#commander'),
-        // --------------------------------------------------
-
-
-        // Other DOM Elements
-        // --------------------------------------------------
-        plus_counter  : $('.plus_counter'),
-        minus_counter : $('.minus_counter')
+        roll_dice : $('#roll__dice'),
+        dice      : $('#dice'),
+        modern    : $('#modern'),
+        commander : $('#commander')
         // --------------------------------------------------
     };
 
@@ -68,21 +53,31 @@ var domController = (function ($) {
 
 
 
-var playerController = (function() {
+var playerController = (function($) {
     
     return {
-        add: function(theDom, event) {
-            var player = event.id.split('__')[1];
-            var score  = event.id.split('__')[3];
-            var target = theDom['player__' + player + '__' + score + '__total'];
+        nameChange: function(theDom, obj) {
+            $(obj)
+                .next()
+                .css({'visibility':'visible', 'height':'2rem'})
+                .val('');
+        },
 
+        confirmName: function(theDom, event, obj) {
+            if (event.which == 13 && $(obj).val() != '') {
+                $(obj)
+                    .css({'visibility':'hidden', 'height':'0' })
+                    .prev().html($(obj).val());
+            }
+        },
+
+        add: function(theDom, obj) {
+            var target = theDom[$(obj).attr('name')]; 
             target.html(parseInt(target.html()) + 1);
         },
 
-        subtract: function(theDom, event) {
-            var player = event.id.split('__')[1];
-            var score  = event.id.split('__')[3];
-            var target = theDom['player__' + player + '__' + score + '__total'];
+        subtract: function(theDom, obj) {
+            var target = theDom[$(obj).attr('name')]; 
 
             if (parseInt(target.html()) > 0) {
                 target.html(parseInt(target.html()) - 1);
@@ -90,82 +85,96 @@ var playerController = (function() {
         }
     }
 
-})();
+})(jQuery);
 
 
 
-var gameController = (function() {
+var gameController = (function($) {
 
     return {
         modern: function(theDom) {
-            // Player 1
-            theDom['player__1__life__total'].html(20);
-            theDom['player__1__poison__total'].html(0);
-            $('.commander').css('display', 'none');
-
-            // Player 2
-            theDom['player__2__life__total'].html(20);
-            theDom['player__2__poison__total'].html(0);
+            theDom['player_life_total'].html(20);
+            theDom['player_poison_total'].html(0);
             $('.commander').css('display', 'none');
         },
 
         commander: function(theDom) {
-            // Player 1
-            theDom['player__1__life__total'].html(40);
-            theDom['player__1__poison__total'].html(0);
+            theDom['player_life_total'].html(40);
+            theDom['player_poison_total'].html(0);
             $('.commander').css('display', 'block');
-            theDom['player__1__commander__total'].html(21);
+            theDom['player_commander_total'].html(21);
+        },
 
-            // Player 2
-            theDom['player__2__life__total'].html(40);
-            theDom['player__2__poison__total'].html(0);
-            $('.commander').css('display', 'block');
-            theDom['player__2__commander__total'].html(21);
+        rollDice: function(theDom, obj) {
+            var roll = Math.ceil(Math.random() * 6);
+            theDom['dice'].attr('src', './img/dice/' + roll + '.png');
+
+            if ($(obj).html() == 'Roll Dice') {
+                $(obj)
+                    .html('Reset')
+                    .next().css('visibility', 'visible');
+            } else {
+                $(obj)
+                    .html('Roll Dice')
+                    .next().css('visibility', 'hidden');
+            }
         }
     }
 
-})();
+})(jQuery);
 
 
 
-var controller = (function(domController, gameController, playerController) {
+var controller = (function($, domController, gameController, playerController) {
     
     var setupEventListeners = function(theDom) {
         // Setup the Game
-        theDom['modern'].on('click', function() {
-            gameController.modern(theDom);
+        theDom['modern'].on('click', function() { 
+            gameController.modern(theDom); 
         });
 
-        theDom['commander'].on('click', function() {
-            gameController.commander(theDom);
+        theDom['commander'].on('click', function() { 
+            gameController.commander(theDom); 
         });
+
 
         // Adjust Points
-        theDom['plus_counter'].on('click', function() {
-            playerController.add(theDom, this);
+        theDom['plus_counter' ].on('click', function() { 
+            playerController.add(theDom, this); 
         });
 
-        theDom['minus_counter'].on('click', function() {
-            playerController.subtract(theDom, this);
+        theDom['minus_counter'].on('click', function() { 
+            playerController.subtract(theDom, this); 
+        });
+
+
+        // Adjust Name
+        theDom['player_name'].on('click', function() { 
+            playerController.nameChange(theDom, this); 
+        });
+
+        theDom['change_player_name'].keypress(function(event) { 
+            playerController.confirmName(theDom, event, this);
+        });
+
+
+        // Roll Dice
+        theDom['roll_dice'].on('click', function() {
+            gameController.rollDice(theDom, this);
         });
     };
 
-
-
     return {
         init: function() {
-            // Get DOM
             var theDom = domController.getDOM();
 
-            // Create Default Game (Modern)
             gameController.modern(theDom);
-
-            // Start Event Listner
             setupEventListeners(theDom);
         }
     }
 
-})(domController, gameController, playerController);
+})(jQuery, domController, gameController, playerController);
+
 
 
 controller.init();

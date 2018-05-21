@@ -5,9 +5,18 @@ Player SCSS
 */
 
 
-#player__1__name,
-#player__2__name {
+.player_name {
 	text-align: center;
+}
+
+.change_player_name {
+	@include          border-radius(.5rem);
+	width:            100%;
+	text-align:       center;
+	border:           none;
+	visibility:       hidden;
+	height:           0;
+	background-color: transparent;
 }
 
 .counter {

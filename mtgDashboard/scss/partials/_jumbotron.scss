@@ -6,12 +6,9 @@ Jumbotron SCSS
 
 
 #jumbotron {
-    background: 
-        linear-gradient(
-            240deg,
-            rgba(81, 178, 237, 1) 10%,
-            rgba(21,  71,  96, 1)
-        );
+    background: url('../img/jumbotron/jumbotron.jpg');
+    background-position: top center;
+    background-size: cover;
     height:     30vh !important;
     max-height: 30%  !important;
 }
