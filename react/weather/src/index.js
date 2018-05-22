@@ -1,5 +1,7 @@
-import React from 'react';
+import React from 'react';\
+// React DOM loads components to the browser
 import ReactDOM from 'react-dom';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
@@ -17,5 +19,7 @@ ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<App />
 	</Provider>, 
+
+	// Find this in HTML and render App within this DOM element
 	document.querySelector('.container')
 );
