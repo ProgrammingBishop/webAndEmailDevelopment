@@ -11,11 +11,8 @@ Jumbotron SCSS
     background-size: cover;
     height:     30vh !important;
     max-height: 30%  !important;
+
+    @media (max-width: $MD) {
+    	display: none;
+    }
 }
-
-
-/* 
-=======================
-Jumbotron Media Queries
-=======================
-*/

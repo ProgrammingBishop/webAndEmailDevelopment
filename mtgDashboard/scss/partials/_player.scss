@@ -45,9 +45,8 @@ Player SCSS
 	text-align: right;
 }
 
-
-/*
-====================
-Player Media Queries
-====================
-*/
+#player__2 {
+	@media (max-width: $MD) {
+		transform: rotate(180deg);
+	}
+}

@@ -11,12 +11,11 @@ Dashboard SCSS
     #dashboard__content {
     	height:     70vh !important;
     	max-height: 70%  !important;
+
+    	@media (max-width: $MD) {
+    		padding:    3rem 0;
+    		height:     auto !important;
+    		max-height: auto !important;
+		}
     }
 }
-
-
-/*
-=======================
-Dashboard Media Queries
-=======================
-*/

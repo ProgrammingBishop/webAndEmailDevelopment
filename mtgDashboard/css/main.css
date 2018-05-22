@@ -3,22 +3,10 @@
 Mixins SCSS
 ===========
 */
-/*
-====================
-Mixins Media Queries
-====================
-*/
 /* 
 ============
 Globals SCSS
 ============
-*/
-/*  Media Query Breakpoints
-    Extra Small:  400px
-    Small:        576px
-    Medium:       768px
-    Large:        992px
-    Extra Large: 1200px
 */
 html {
   overflow-x: hidden; }
@@ -51,11 +39,6 @@ p {
   font-weight: 300; }
 
 /* 
-=====================
-Globals Media Queries
-=====================
-*/
-/* 
 ==============
 Jumbotron SCSS
 ==============
@@ -66,12 +49,10 @@ Jumbotron SCSS
   background-size: cover;
   height: 30vh !important;
   max-height: 30%  !important; }
+  @media (max-width: 767px) {
+    #jumbotron {
+      display: none; } }
 
-/* 
-=======================
-Jumbotron Media Queries
-=======================
-*/
 /* 
 ==============
 Dashboard SCSS
@@ -82,12 +63,12 @@ Dashboard SCSS
   #dashboard #dashboard__content {
     height: 70vh !important;
     max-height: 70%  !important; }
+    @media (max-width: 767px) {
+      #dashboard #dashboard__content {
+        padding: 3rem 0;
+        height: auto !important;
+        max-height: auto !important; } }
 
-/*
-=======================
-Dashboard Media Queries
-=======================
-*/
 /* 
 ===========
 Player SCSS
@@ -146,11 +127,10 @@ Player SCSS
 .counter_count {
   text-align: right; }
 
-/*
-====================
-Player Media Queries
-====================
-*/
+@media (max-width: 767px) {
+  #player__2 {
+    transform: rotate(180deg); } }
+
 /* 
 ============
 Control SCSS
@@ -184,8 +164,6 @@ Control SCSS
     background-color: #fcb32b;
     transition: .3s; }
 
-/* 
-=====================
-Control Media Queries
-=====================
-*/
+@media (max-width: 767px) {
+  #controller {
+    transform: rotate(-90deg); } }

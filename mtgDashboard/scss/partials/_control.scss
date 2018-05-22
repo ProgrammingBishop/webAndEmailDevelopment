@@ -23,9 +23,8 @@ Control SCSS
 	margin:    1rem auto;
 }
 
-
-/* 
-=====================
-Control Media Queries
-=====================
-*/
+#controller {
+	@media (max-width: $MD) {
+		transform: rotate(-90deg);
+	}
+}
