@@ -47,7 +47,7 @@ class SearchBar extends Component {
 		// Clear search input to '' after submit
 		this.setState({ term : '' });
 	}
-
+ 
 
 	// Updates to be made on render()
 	render() {
