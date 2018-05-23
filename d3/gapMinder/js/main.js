@@ -23,6 +23,11 @@ var svg = d3.select('chart__area')
 		.attr('height', height + margin.top  + margin.bottom);
 
 
+// Center canvas on page
+var g = svg.append("g")
+	.attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+
+
 // Load in Data
 d3.json("data/data.json").then(function(data) {
 	
