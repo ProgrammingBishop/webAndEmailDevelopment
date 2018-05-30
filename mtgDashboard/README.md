@@ -1,3 +1,11 @@
+### Features
+
+Random dice roller to decide whose turn is first
+Ability to click on the name to change to the player's preferences
+Change between 2 game modes: Modern and Commander (also resets the scores for a new game)
+Ability to track the scores (Life, Poison, Commander) of each player for the currently selected game mode
+Dynamic layout to function for desktop and mobile uses
+
 ### To Preview:
 
 1 - Copy the URL in the 'GitHub URL' column  
