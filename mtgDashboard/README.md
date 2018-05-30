@@ -1,10 +1,10 @@
 ### Features
 
-Random dice roller to decide whose turn is first  
-Ability to click on the name to change to the player's preferences  
-Change between 2 game modes: Modern and Commander (also resets the scores for a new game)  
-Ability to track the scores (Life, Poison, Commander) of each player for the currently selected game mode  
-Dynamic layout to function for desktop and mobile uses  
+a - Random dice roller to decide whose turn is first  
+b - Ability to click on the name to change to the player's preferences  
+c - Change between 2 game modes: Modern and Commander (also resets the scores for a new game)  
+d - Ability to track the scores (Life, Poison, Commander) of each player for the currently selected game mode  
+e - Dynamic layout to function for desktop and mobile uses  
 
 ### To Preview:
 
