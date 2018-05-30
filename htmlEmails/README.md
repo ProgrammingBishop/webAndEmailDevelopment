@@ -1,13 +1,13 @@
-Visit the link below and populate the input field with the URL of the file to preview within your browser:  
-http://htmlpreview.github.io/
+### To Preview:
 
-Email file URLs:
+1 - Copy the URL in the 'GitHub URL' column  
+2 - When you visit the following page in a new tab: http://htmlpreview.github.io/  
+3 - Paste the copied URL in the field supplied to view in your browser  
 
-officiteEmail01.html  
-https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/officiteEmail01.html
+### Email URLs:
 
-officiteNewsletter01.html  
-https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/officiteNewsletter01.html
-
-therapySitesEmail01.html  
-https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/therapySitesEmail01.html
+|ID      |Files                          |GitHub URL                                                                                            |
+|--------|-------------------------------|------------------------------------------------------------------------------------------------------|
+|001     |officiteEmail01.html           |https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/officiteEmail01.html       |
+|002     |officiteNewsletter01.html      |https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/officiteNewsletter01.html  |
+|003     |therapySitesEmail01.html       |https://github.com/ProgrammingBishop/webDevelopment/blob/master/htmlEmails/therapySitesEmail01.html   |
