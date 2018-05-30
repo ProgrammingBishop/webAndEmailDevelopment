@@ -2,7 +2,7 @@
 
 1 - Change directory in terminal/command line to the directory containing the HTML file  
 2 - Make sure you have Python installed on your device  
-3 - In this directory and within terminal, type python -m http.server  
+3 - In this directory and within terminal/command line, enter $ python -m http.server  
 4 - Visit the port within your browser (typically http://0.0.0.0:8000/)  
 
 ### machineLearningAlgorithms
