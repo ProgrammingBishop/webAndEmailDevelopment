@@ -1,8 +1,17 @@
-To preview this page, visit http://htmlpreview.github.io and populate the input field with the URL below:
-https://github.com/ProgrammingBishop/webAndEmailDevelopment/blob/master/mtgDashboard/index.html
+### To Preview:
+
+1 - Copy the URL in the 'GitHub URL' column  
+2 - When you visit the following page in a new tab: http://htmlpreview.github.io/  
+3 - Paste the copied URL in the field supplied to view in your browser  
+
+### Email URLs:
+
+|ID      |Files               |GitHub URL                                                                                            |
+|--------|--------------------|------------------------------------------------------------------------------------------------------|
+|001     |index.html          |https://github.com/ProgrammingBishop/webAndEmailDevelopment/blob/master/mtgDashboard/index.html       |
 
 
-# Images:
+### Credits for Images:
 
 Use of the following images serves to only add aesthetic value to a prototype application.
 
