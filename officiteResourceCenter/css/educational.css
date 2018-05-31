@@ -1,0 +1,94 @@
+/*
+===================
+Presentation Styles
+===================
+*/
+
+#educational {
+    margin: 3rem 0 5rem 0;
+}
+
+#educational__hr {
+    margin: 6rem 0 3rem 0;
+}
+
+#educational img {
+    max-width: 100%;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+.prese_button {
+    color:                 #ffffff;
+    background-color:      #0066b3;
+    transition:            .3s;
+    padding:               .25rem 1rem;
+    border:                none;
+    font-size:             1.25rem;
+    text-align:            center;
+    margin:                2rem auto;
+    display:               block;
+    -webkit-border-radius: .5rem;
+       -moz-border-radius: .5rem;
+            border-radius: .5rem;
+}
+
+.prese_button:hover {
+    background-color: #fcb32b;
+    transition:       .3s;
+}
+
+#educational h2 {
+    text-align: center;
+    margin:     0 0 2rem 0;
+}
+
+#educational a {
+    cursor:          pointer;
+    text-decoration: none;
+    font-size:       1.25rem;
+    padding:         0;
+    color:           #ffffff;
+}
+
+#educational a:hover {
+    color:  #ffffff;
+    border: none;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+
+    #educational {
+        margin: 0 0 5rem 0;
+    }
+
+    #educational img {
+        margin: 5rem 0 0 0;
+    }
+
+    #educational__hr {
+        margin: 6rem 0 3rem 0;
+    }
+
+    #educational h2 {
+        margin: 0 0 -2rem 0;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    #educational {
+        margin: 2rem 0 5rem 0;
+    }
+
+}

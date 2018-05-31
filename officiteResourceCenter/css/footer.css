@@ -1,0 +1,61 @@
+/*
+==========================
+Henry Schein Footer Styles
+==========================
+*/
+
+#henry__shein__footer {
+    position:           fixed;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    height:             auto;
+    background-color:   #ffffff;
+    opacity:            1;
+    display:            block;
+    padding:            .5rem;
+    -webkit-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes add-schein {
+    from { opacity: 0 }
+    to   { opacity: 1 }
+}
+
+@keyframes remove-schein {
+    from { opacity: 1 }
+    to   { opacity: 0 }
+}
+
+#henry__shein__logo {
+    max-width: 100%;
+}
+
+.social-icon {
+    max-width: 7.5%;
+    margin:    0 .25rem;
+}
+
+/*
+=============
+Media Queries
+=============
+*/
+
+@media (max-width: 992px) {
+    
+    .social-icon {
+        max-width: 12%;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    
+    .social-icon {
+        max-width: 25%;
+    }
+    
+}
