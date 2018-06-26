@@ -1,0 +1,72 @@
+<!-- 
+     [property binding]
+     (event binding)
+        Event binding has access to all events the HTML/JS would have access to
+        Like click, submit, mouseover, etc.
+
+    When (event) occurs on element, the code in '' will be excuted from .ts file 
+  -->
+<label>Server Name</label>
+
+<!-- 1-way binding: Updates in one direction -->
+<!-- $event is data submitted with the event -->
+<!-- In this case, whenever user types input, call method -->
+
+<!-- 
+    When Input is added 'onUpdateServerName' is called
+    'onUpdateServerName' will update the comp variable 'serverName' 
+    Since 'serverName' is interpolated below, the value below in the template 
+    will update in real-time
+-->
+<input 
+    type='text' 
+    class='form-control'
+    (input)='onUpdateServerName($event)'>
+
+<!-- 2-way Data Binding uses [()] property and event binding: Updates in 2 directions -->
+<!-- 2-way binding uses directive 'ngModel' (Be sure to import FormsModule in app.module.ts file) -->
+<!-- 
+    Triggers on input event and updates value of 'serverName' in comp automatically
+    Since 2-way binding it will also update value of input element if server name is changed
+ -->
+ <!-- 2-way binding does not need a function to update property like 1-way binding does -->
+<input 
+    type='text' 
+    class='form-control'
+    [(ngModel)]='serverName'>
+
+<p>{{ serverName }}</p>
+
+<button 
+    class='btn btn-primary'
+    [disabled]='!allowNewServer'
+    (click)='onCreateServer()'>Add Server
+</button>
+
+<!-- Property Binding: Use when changing property like an HTML element -->
+    <!-- <p [innerText]='allowNewServer'></p> -->
+<!-- String Interpolation: Use when wanting to print to template -->
+    <!-- <p>{{ allowNewServer }}</p> -->
+
+<!-- Use'*' for 'ngIf' directive -->
+<!-- '*' signifies that a directive will change the DOM (add or remove elements) -->
+<!-- Will only be added on true/false statements -->
+<!-- else 'conditional tag' will be used by default. In this case it is the tag section below -->
+<p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
+
+<!-- '#' is a local reference -->
+<!-- This is to show the code below conditionally -->
+<!-- 'ng-template' is built into Angular -->
+<ng-template #noServer>
+    <p>{{ serverCreationStatus }}</p>
+</ng-template>
+
+<!-- '*' tells that directive will update the DOM -->
+<!-- 'ngFor' is a directive loop -->
+<!-- within ' "" ' is a temporary variable -->
+<!-- 'servers' is property defined within the .ts file -->
+<!-- 
+    Directive will loop through all elements of the array 'server' assign 
+    individual elements to dynamic 'server' variable (like a forEach loop)
+-->
+<app-server *ngFor="let server of servers"></app-server>
