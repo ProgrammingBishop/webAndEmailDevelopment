@@ -1,6 +1,2 @@
-/*
-*    main.js
-*    Mastering Data Visualization with D3.js
-*    Project 1 - Star Break Coffee
-*/
+var margin = { top : 100, bottom : 100, left : 100, right : 100 };
 
