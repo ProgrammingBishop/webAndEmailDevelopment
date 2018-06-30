@@ -16,7 +16,7 @@ var height =  800 - margin.top - margin.bottom;
 
 
 // Add canvas
-var svg = d3.select('chart__area')
+var svg = d3.select('#chart__area')
 	.append('svg')
 		// Add margins around canvas
 		.attr('width',  width  + margin.left + margin.right)
@@ -34,7 +34,6 @@ d3.json("data/data.json").then(function(data) {
 	// Filter out data points containing null values
 	filtered = filterData(data);
 	console.log(filtered);
-
 
 }).catch(function(error) {
 	console.log(error);
