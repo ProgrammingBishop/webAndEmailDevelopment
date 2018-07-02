@@ -1,23 +1,45 @@
 <?php 
-    class Car {
-        var $wheels = 4;
-        var $hood   = 1;
-        var $engine = 1;
-        var $doors  = 4;
-        
-        function AddWheels() {
-            $this -> wheels = 10;
+    class Store {
+        protected $storeName     = "";
+        protected $storeLocation = "";
+
+        public function __construct() {
+            $this->storeName     = "Gildas Guilds";
+            $this->storeLocation = "Whiterun";
+            
+            echo $this->storeName . " " . $this->storeLocation;
         }
-    } 
+
+        public function getStoreName() {
+            echo $this->storeName;
+        }
+    }
     
-    if( class_exists("Car") ) { echo "Hai!"; } 
-    else { echo "Byai!"; }
+    class Merchant extends Store {
+        private $name     = "";
+        private $gold     = 0;
+        private $location = "";
 
-    if( method_exists("Car", "AddWheels") ) { echo "Hai!"; } 
-    else { echo "Byai!"; }
+        public function __construct($name, $gold, $location) {
+            $this->name     = $name;
+            $this->gold     = $gold;
+            $this->location = $location;
+        }
 
-    $bmw = new Car();
+        public function getName() {
+            echo $this->name;
+        }
+        
+        public function getGold() {
+            echo $this->gold;
+        }
 
-    $bmw -> AddWheels();
-    echo $bmw -> wheels;
+        public function getLocation() {
+            echo $this->location;
+        }
+    }
+
+    $store = new Store();
+    $merch = new Merchant("Barthalamew", 1270, "Whiterun");
+    $merch->getGold();
 ?>
