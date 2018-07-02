@@ -1,94 +1,98 @@
-var margin = { top: 10, bottom:150, left: 100, right: 10 };
+var margin = { top: 10, bottom: 150, left: 60, right: 60 };
 var height = 600 - margin.top  - margin.bottom;
 var width  = 800 - margin.left - margin.right;
 
 
-var svg = d3.select("#chart-area")
+var canvas = d3.select("#chart-area")
     .append("svg")
-        .attr("width",  width  + margin.right + margin.left)
-        .attr("height", height + margin.top   + margin.bottom);
+        .attr("width",  width  + margin.left + margin.right)
+        .attr("height", height + margin.top  + margin.bottom);
 
-var g = svg.append("g")
+var hist = canvas.append("g")
     .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
-d3.json("../data/buildings.json").then(function(data) {
-    data.forEach(function(d) {
+
+d3.json("./data/buildings.json").then((data) => {
+    data.forEach((d) => {
         d.height = +d.height;
     });
 
 
     var x = d3.scaleBand()
-        .domain(data.map(function(d) {
+        .domain(data.map((d) => {
             return d.name;
         }))
         .range([0, width])
         .paddingInner(0.3)
         .paddingOuter(0.3);
 
-    var xAxisCall = d3.axisBottom(x);
+    var y = scaleLinear()
+        .domain([0, d3.max(data, (d) => {
+            return d.height;
+        })])
+        .range([height, 0]);
 
-    g.append("g")
+
+    var xAxisCall = axisBottom(x);
+
+    hist.append("g")
         .attr("class", "x-axis")
         .attr("transform", "translate(0, " + height + ")")
         .call(xAxisCall)
-        .selectAll("text")
             .attr("x", -5)
             .attr("y", 10)
             .attr("text-anchor", "end")
             .attr("transform", "rotate(-40)");
 
-    g.append("text")
+    hist.append("g")
         .attr("class", "x-label")
         .attr("font-size", "20px")
         .attr("x", width / 2)
         .attr("y", height + 140)
         .attr("text-anchor", "middle")
-        .text("World's Tallest Buildings");
+        .text("World's Tallest Building");
 
 
-    var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) {
-            return d.height;
-        })])
-        .range([height, 0]);
-
-    var yAxisCall = d3.axisLeft(y)
+    var yAxisCall = axisLeft(y)
         .ticks(10)
-        .tickFormat(function(d) {
+        .tickFormate((d) => {
             return d + "m";
         });
 
-    g.append('g')
-        .attr('class', 'y-axis')
+    hist.append("g")
+        .attr("class", "y-axis")
         .call(yAxisCall);
 
-    g.append("text")
-        .attr('class', 'y-label')
-        .attr('x', -(height / 2))
-        .attr('y', -60)
-        .attr('font-size', '20px')
-        .attr('text-anchor', 'middle')
-        .attr('transform', 'rotate(-90)')
+    hist.append("g")
+        .attr("class", "y-label")
+        .attr("font-size", "20px")
+        .attr("x", -(height / 2))
+        .attr("y", -60)
+        .attr("text-anchor", "middle")
+        .attr("tranform", "rotate(-90)")
         .text("Height (m)");
 
 
-    var rects = g.selectAll("rect")
-        .data(data)  
-        .enter()
+    var bars = hist.selectAll("rect")
+        .data(data);
+
+    bars.enter()
         .append("rect")
-            .attr("height", (d) => {
-                return height - y(d.height);
-            })
             .attr("width", x.bandwidth)
+            .attr("height", (d) => {
+                return height - y(d.height)
+            })
             .attr("x", (d) => {
                 return x(d.name);
             })
             .attr("y", (d) => {
-                return y(d.height);
+                return x(d.height);
             })
             .attr("fill", "grey");
 
 
-}).catch(function(error) {
+    bars.exit().remove();
+
+}).catch((error) => {
     console.log(error);
 });
