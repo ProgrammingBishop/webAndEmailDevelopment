@@ -26,19 +26,20 @@ d3.json("./data/buildings.json").then((data) => {
         .paddingInner(0.3)
         .paddingOuter(0.3);
 
-    var y = scaleLinear()
+    var y = d3.scaleLinear()
         .domain([0, d3.max(data, (d) => {
             return d.height;
         })])
         .range([height, 0]);
 
 
-    var xAxisCall = axisBottom(x);
+    var xAxisCall = d3.axisBottom(x);
 
     hist.append("g")
         .attr("class", "x-axis")
         .attr("transform", "translate(0, " + height + ")")
         .call(xAxisCall)
+        .selectAll("text")
             .attr("x", -5)
             .attr("y", 10)
             .attr("text-anchor", "end")
@@ -53,9 +54,9 @@ d3.json("./data/buildings.json").then((data) => {
         .text("World's Tallest Building");
 
 
-    var yAxisCall = axisLeft(y)
+    var yAxisCall = d3.axisLeft(y)
         .ticks(10)
-        .tickFormate((d) => {
+        .tickFormat((d) => {
             return d + "m";
         });
 
@@ -86,7 +87,7 @@ d3.json("./data/buildings.json").then((data) => {
                 return x(d.name);
             })
             .attr("y", (d) => {
-                return x(d.height);
+                return y(d.height);
             })
             .attr("fill", "grey");
 
