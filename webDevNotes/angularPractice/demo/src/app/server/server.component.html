@@ -1,9 +1,0 @@
-<!-- ngStyle is directive name built into Angular -->
-<!-- '[]' is property binding. Binds style to this element -->
-<!-- camelCase CSS property. Call function 'getColor()' -->
-<!-- 'ngClass' will attach classes conditionally just like styles -->
-<p>ID: {{ serverId }}</p>
-<p 
-    [ngClass]="{ online: serverStatus === 'online' }"
-    [ngStyle]="{ backgroundColor: getColor() }">Status: {{ serverStatus }}
-</p>
