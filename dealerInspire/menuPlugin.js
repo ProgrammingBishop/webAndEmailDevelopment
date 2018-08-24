@@ -79,7 +79,7 @@ var navController = (function ($) {
 
         setNavigationWidth: function(dom, globals) {
             dom.main_menu.each(function() {
-
+                console.log(this);
             });
         }
     }
@@ -104,6 +104,8 @@ var mainController = (function ($, theDom, theGlobals, navFuncs) {
 })($, domElements, globalElements, navController);
 
 
-if ( $(window).width() > 767 ) {
-    mainController.init();
-}
+jQuery(document).ready(function($) {
+    if ( $(window).width() > 767 ) {
+        mainController.init();
+    }
+});
