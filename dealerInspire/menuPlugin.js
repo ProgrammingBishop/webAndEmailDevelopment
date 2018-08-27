@@ -1,10 +1,10 @@
 /* ==================================================
 DOM Elements
 ================================================== */
-var domElements = (function ($) {
+var domElements = (function () {
 
     var theDom = {
-        main_menu               : "#menu-main-menu",
+        main_menu               : "#menu-main-menu > li",
         mega_menu               : "#menu-main-menu .megamenu",
         mega_menu_link          : ".megamenu .sub-menu > li > a",
         mega_menu_sub_head      : ".megamenu .sub-menu .sub-heading",
@@ -15,16 +15,16 @@ var domElements = (function ($) {
 
     return {
         getDom: function() {
-            return domElements.theDom;
+            return theDom;
         }
     }
 
-})($);
+})();
 
 /* ==================================================
 Global Variables
 ================================================== */
-var globalElements = (function ($) {
+var globalElements = (function () {
 
     var theGlobals = {
         li_array : []
@@ -32,11 +32,11 @@ var globalElements = (function ($) {
 
     return {
         getGlobals: function() {
-            return globalElements.theGlobals;
+            return theGlobals;
         }
     }
 
-})($);
+})();
 
 
 /* ==================================================
@@ -57,7 +57,7 @@ var calcController = (function ($) {
         }
     }
 
-})($);
+})(jQuery);
 
 
 /* ==================================================
@@ -74,23 +74,24 @@ var navController = (function ($) {
         },
 
         setSubMenuWidth: function() {
-
+            
         },
 
         setNavigationWidth: function(dom, globals) {
-            dom.main_menu.each(function() {
-                console.log(this);
+            $(dom.main_menu).each(function() {
+                ( $(this).hasClass("megamenu") ) ? navController.setMegaMenuWidth() :
+                                                   navController.setSubMenuWidth();
             });
         }
     }
 
-})($);
+})(jQuery);
 
 
 /* ==================================================
 Main Controller
 ================================================== */
-var mainController = (function ($, theDom, theGlobals, navFuncs) {
+var mainController = (function (theDom, theGlobals, navFuncs) {
 
     return {
         init: function() {
@@ -101,7 +102,7 @@ var mainController = (function ($, theDom, theGlobals, navFuncs) {
         }
     }
 
-})($, domElements, globalElements, navController);
+})(domElements, globalElements, navController);
 
 
 jQuery(document).ready(function($) {
