@@ -10,6 +10,7 @@ var domElements = (function () {
         mega_menu_link          : "#menu-main-menu > li.megamenu .sub-menu > li > a",
         mega_menu_sub_head      : "#menu-main-menu > li.megamenu .sub-menu .sub-heading",
         link_item               : "li a",
+        default_link            : "#menu-main-menu > li > a",
 
         
         mega_menu_sub_head_link : "#menu-main-menu > li.megamenu .sub-menu .sub-heading > ul > li > a",
@@ -95,13 +96,8 @@ var navController = (function ($, calcFuncs) {
     }
 
     return {
-        setMegaMenuWidth: function(navItem, dom, globals, calcs) {
-            navVars.font_size  = navItem.find(dom.link_item).css("font-size");
-            navVars.font_type  = navItem.find(dom.link_item).css("font-family");
-            navVars.pad_width  = parseInt( navItem.find(dom.link_item).css("padding-left").split("px")[0] * 2 );
-
-            calcs.cur_width    = 0;
-            calcs.max_width    = 0;
+        setMegaMenuWidth: function(navItem, dom, calcs) {
+            
             calcs.num_sub_head = $(navItem).find(dom.sub_head).length;
 
             $(navItem).find(dom.link_item).each(function() {
@@ -116,14 +112,37 @@ var navController = (function ($, calcFuncs) {
             $(navItem).find(dom.link_item).css("background", "none");
         },
 
-        setSubMenuWidth: function(navItem, dom, globals, calcs) {
+        setSubMenuWidth: function(navItem, dom, calcs) {
+            calcs.cur_width    = 0;
+            calcs.max_width    = 0;
+
+            $(navItem).find(dom.link_item).each(function() {
+                calcFuncs.getLongestSubMenuTextWidth( $(this).text(), navVars.font_size, navVars.font_type, navVars.pad_width );
+
+                if ( calcs.cur_width > calcs.max_width ) {
+                    calcs.max_width = calcs.cur_width;
+                }
+            });
+
+            $(navItem).find(dom.sub_menu).css( "width", String(calcs.max_width) + "px" );
+        },
+
+        setTextStyles: function(dom) {
+            navVars.font_size = dom.default_link.find(dom.link_item).css("font-size");
+            navVars.font_type = dom.default_link.find(dom.link_item).css("font-family");
+            navVars.pad_width = parseInt( dom.default_link.find(dom.link_item).css("padding-left").split("px")[0] * 2 );
         },
 
         setNavigationWidth: function(dom, globals, calcs) {
+            navController.setTextStyles(dom);
+
             $(dom.main_menu).each(function() {
+                calcs.cur_width = 0;
+                calcs.max_width = 0;
+
                 ( $(this).hasClass(dom.mega_menu) && $(dom.mega_menu_sub_head).length > 1 ) ? 
-                    navController.setMegaMenuWidth( $(this), dom, globals, calcs ) : 
-                    navController.setSubMenuWidth(  $(this), dom, globals, calcs );
+                    navController.setMegaMenuWidth( $(this), dom, calcs ) : 
+                    navController.setSubMenuWidth(  $(this), dom, calcs );
             });
         }
     }
